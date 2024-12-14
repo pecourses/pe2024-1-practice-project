@@ -7,6 +7,7 @@ import { clearUserStore } from '../../store/slices/userSlice';
 import { getUser } from '../../store/slices/userSlice';
 import withRouter from '../../hocs/withRouter';
 import Logo from '../Logo';
+import Congrats from './Congrats/Congrats';
 
 const { TEL } = CONSTANTS.CONTACTS;
 
@@ -41,6 +42,7 @@ class Header extends React.Component {
               alt='user'
             />
             <span>{`Hi, ${this.props.data.displayName}`}</span>
+
             <img
               src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`}
               alt='menu'
@@ -89,6 +91,7 @@ class Header extends React.Component {
             className={styles.emailIcon}
             alt='email'
           />
+          <Congrats birthday={this.props.data.birthday} />
         </>
       );
     }
